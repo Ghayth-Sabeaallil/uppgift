@@ -10,7 +10,7 @@ function copy(email : string){
         <img class="avatar" :src=avatar :alt=fname>
         <h2>{{ fname }} {{ lname }}</h2>
         <div> <a :href="'mailto:' + email"><img src="/mail.png" alt="mail"></a>
-            <img @click="copy(email)" src="/copy.png" alt="copy email">
+            <img @click="copy(email)" src="/copy.svg" alt="copy email">
         </div>
     </div>
 </template>

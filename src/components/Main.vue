@@ -36,7 +36,7 @@ fetchData(1);
 
 <template>
   <main>
-    <div class="main">
+    <div class="contact-box">
       <Card
         v-for="person in datas?.data"
         :key="person.id"
@@ -60,23 +60,18 @@ main {
   flex-direction: column;
   gap: 3rem;
 }
-.main {
+.contact-box {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-content: center;
   text-align: center;
   align-items: center;
+  padding: 1em;
 }
 .btn-cont{
     display: flex;
     justify-content: center;
-}
-
-button {
-  width: 3rem;
-  font-size: larger;
-  font-weight: 600;
-  font-family: "Times New Roman", Times, serif;
+    gap: 0.5em;
 }
 
 </style>
