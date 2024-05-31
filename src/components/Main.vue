@@ -36,6 +36,7 @@ fetchData(1);
 
 <template>
   <main>
+    <h1 class="title">Contact Us</h1>
     <div class="contact-box">
       <Card
         v-for="person in datas?.data"
@@ -59,6 +60,9 @@ main {
   justify-content: center;
   flex-direction: column;
   gap: 3rem;
+}
+h1{
+  text-align: center  ;
 }
 .contact-box {
   display: grid;
