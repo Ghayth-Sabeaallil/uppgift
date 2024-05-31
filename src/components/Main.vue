@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Card from "./Card.vue";
+import Button from "./Button.vue";
+
 
 type data = {
   data: person[];
+  total_pages: number;
 };
 type person = {
   id: number;
@@ -12,10 +15,12 @@ type person = {
   last_name: string;
   avatar: string;
 };
+
+
 const datas = ref<data>();
 
 //function to fetch
-const fetchData = async (page: number) => {
+ const fetchData = async (page: number) => {
   try {
     const response = await fetch(`https://reqres.in/api/users?page=${page}`);
     const result = await response.json();
@@ -42,8 +47,7 @@ fetchData(1);
       />
     </div>
     <div class="btn-cont">
-      <button type="button" @click="fetchData(1)">1</button>
-      <button type="button" @click="fetchData(2)">2</button>
+      <Button :buttonText=pages :onClick="fetchData" v-for="pages in datas?.total_pages" />
     </div>
   </main>
 </template>
